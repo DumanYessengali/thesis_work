@@ -20,7 +20,7 @@ func (app *application) signIn(w http.ResponseWriter, r *http.Request) {
 	form := forms.New(r.PostForm)
 	username := form.Get("username")
 	password := form.Get("password")
-	if username != "admin" && password != "123" {
+	if username != "admin" || password != "123" {
 		form.Errors.Add("generic", "Username or Password is incorrect")
 		app.render(w, r, "login.page.tmpl", &templateData{Form: form})
 		return

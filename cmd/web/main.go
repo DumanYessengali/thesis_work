@@ -1,25 +1,22 @@
 package main
 
 import (
-	"context"
 	"crypto/tls"
 	"flag"
 	"github.com/golangcollege/sessions"
-	"github.com/jackc/pgx/v4/pgxpool"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
 
-	"thesis_work/pkg/models/postgres"
 	"time"
 )
 
 type application struct {
-	errorLog      *log.Logger
-	infoLog       *log.Logger
-	session       *sessions.Session
-	student       *postgres.PgModel
+	errorLog *log.Logger
+	infoLog  *log.Logger
+	session  *sessions.Session
+	//student       *postgres.PgModel
 	templateCache map[string]*template.Template
 }
 
@@ -31,12 +28,12 @@ func main() {
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 
-	pool, err := pgxpool.Connect(context.Background(), "user=postgres password=1234 host=localhost port=5432 dbname=esyllabus sslmode=disable pool_max_conns=10")
-	if err != nil {
-		log.Fatalf("Unable to connection to database: %v\n", err)
-	}
-
-	defer pool.Close()
+	//pool, err := pgxpool.Connect(context.Background(), "user=postgres password=1234 host=localhost port=5432 dbname=esyllabus sslmode=disable pool_max_conns=10")
+	//if err != nil {
+	//	log.Fatalf("Unable to connection to database: %v\n", err)
+	//}
+	//
+	//defer pool.Close()
 
 	templateCache, err := newTemplateCache("./ui/html/")
 	if err != nil {
@@ -48,10 +45,10 @@ func main() {
 	session.Secure = true
 
 	app := &application{
-		errorLog:      errorLog,
-		infoLog:       infoLog,
-		session:       session,
-		student:       &postgres.PgModel{Pool: pool},
+		errorLog: errorLog,
+		infoLog:  infoLog,
+		session:  session,
+		//student:       &postgres.PgModel{Pool: pool},
 		templateCache: templateCache,
 	}
 
@@ -70,6 +67,7 @@ func main() {
 		WriteTimeout: 10 * time.Second,
 	}
 	infoLog.Printf("Starting server on %s", *addr)
-	err = srv.ListenAndServeTLS("./tls/cert.pem", "./tls/key.pem")
+	err = srv.ListenAndServe()
+	//err = srv.ListenAndServeTLS("./tls/cert.pem", "./tls/key.pem")
 	errorLog.Fatal(err)
 }
