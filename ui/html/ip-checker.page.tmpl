@@ -1,0 +1,17 @@
+{{template "base" .}}
+{{define "title"}}Home{{end}}
+{{define "main"}}
+    <form action='/ip-checker' method='POST' novalidate>
+        {{with .Form}}
+            {{with .Errors.Get "generic"}}
+                <div class='error'>{{.}}</div>
+            {{end}}
+            <div>
+                <input type="text" name="ip" placeholder="ip address"/>
+            </div>
+            <div>
+                <input type='submit' value='Go'>
+            </div>
+        {{end}}
+    </form>
+{{end}}

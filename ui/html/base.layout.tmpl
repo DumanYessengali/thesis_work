@@ -154,7 +154,10 @@
             <nav>
 
                 {{if .IsAuthenticated}}
-                    <div style="width:100%">
+                    <div style="width:70%">
+                        <a href='/'>Home</a>
+                    </div>
+                    <div style="width:30%">
                         <form action='/logout' method='POST'>
                             <button>Logout</button>
                         </form>

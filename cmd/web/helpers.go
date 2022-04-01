@@ -35,7 +35,12 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, name stri
 		app.serverError(w, err)
 		return
 	}
-	buf.WriteTo(w)
+	_, err = buf.WriteTo(w)
+	if err != nil {
+		app.serverError(w, err)
+
+		return
+	}
 }
 
 func (app *application) isAuthenticated(r *http.Request) bool {
@@ -47,18 +52,5 @@ func (app *application) addDefaultData(td *templateData, r *http.Request) *templ
 	}
 	td.Flash = app.session.PopString(r, "flash")
 	td.IsAuthenticated = app.isAuthenticated(r)
-	//if app.IsTeacher(r) {
-	//	td.IsTeacher = app.IsTeacher(r)
-	//} else if app.IsStudent(r) {
-	//	td.IsStudent = app.IsStudent(r)
-	//} else if app.IsCoordinator(r) {
-	//	td.IsCoordinator = app.IsCoordinator(r)
-	//} else if app.IsDean(r) {
-	//	td.IsDean = app.IsDean(r)
-	//} else if app.IsAdmin(r) {
-	//	td.IsAdmin = app.IsAdmin(r)
-	//} else if app.IsNewTeacher(r) {
-	//	td.IsNewTeacher = app.IsNewTeacher(r)
-	//}
 	return td
 }

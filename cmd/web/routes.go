@@ -13,12 +13,17 @@ func (app *application) routes() http.Handler {
 
 	mux := pat.New()
 
-	mux.Get("/", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.home))
 	mux.Get("/signin", dynamicMiddleware.Append().ThenFunc(app.signInForm))
 	mux.Post("/signin", dynamicMiddleware.ThenFunc(app.signIn))
 	mux.Post("/logout", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.logoutUser))
 
+	mux.Get("/", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.home))
 	mux.Get("/redirect", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.redirect))
+
+	mux.Get("/ip-checker", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.ipCheckerForm))
+	mux.Post("/ip-checker", dynamicMiddleware.ThenFunc(app.ipChecker))
+	mux.Get("/ip-info", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.ipInform))
+	mux.Post("/ip-info", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.ipInfo))
 
 	fileServer := http.FileServer(http.Dir("./ui/static/"))
 	mux.Get("/static/", http.StripPrefix("/static", fileServer))
