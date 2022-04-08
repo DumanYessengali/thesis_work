@@ -1,5 +1,11 @@
 {{template "base" .}}
 {{define "title"}}Home{{end}}
 {{define "main"}}
+{{with .Config}}
+    {{range .Data}}
+        {{.Type}}
+    {{end}}
+    {{.Links.Self}}
+{{end}}
 
 {{end}}

@@ -3,6 +3,7 @@ package main
 import (
 	"html/template"
 	"path/filepath"
+	"thesis_work/pkg/config"
 	"thesis_work/pkg/forms"
 )
 
@@ -12,6 +13,8 @@ type templateData struct {
 	Prediction      string
 	Time            bool
 	IsAuthenticated bool
+	Config          *config.Config
+	//Data            []config.Data
 }
 
 func newTemplateCache(dir string) (map[string]*template.Template, error) {
