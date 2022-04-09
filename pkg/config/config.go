@@ -20,7 +20,7 @@ type Attributes struct {
 	Country                  string               `json:"country"`
 	AsOwner                  string               `json:"as_owner"`
 	LastAnalysisStats        LastAnalysisStats    `json:"last_analysis_stats"`
-	Asn                      int64                `json:"asn"`
+	ASN                      int64                `json:"asn"`
 	WhoisDate                int64                `json:"whois_date"`
 	LastAnalysisResults      LastAnalysisResults  `json:"last_analysis_results"`
 	Reputation               int64                `json:"reputation"`
@@ -136,7 +136,7 @@ type LastAnalysisResults struct {
 	FraudScore               Scanner `json:"FraudScore"`
 	Tencent                  Scanner `json:"Tencent"`
 	BforeAiPreCrime          Scanner `json:"Bfore.Ai PreCrime"`
-	Baidinternational        Scanner `json:"Baidu-International"`
+	BaiduInternational       Scanner `json:"Baidu-International"`
 }
 
 type Scanner struct {

@@ -3,9 +3,1406 @@
 {{define "main"}}
 {{with .Config}}
     {{range .Data}}
-        {{.Type}}
+
+        {{with .Attributes}}
+            <table class="cinereousTable">
+                {{with .LastAnalysisResults}}
+                    <thead>
+                        <tr>
+                            <th colspan="3" style="text-align:center">Detection</th>
+                        </tr>
+                        <tr>
+                            <th style="width:33%; text-align:center">Name</th>
+                            <th style="width:33%; text-align:center">Result</th>
+                            <th style="width:33%; text-align:center">Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{with .CMCThreatIntelligence}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .SnortIPSampleList}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Scanner0xSI_f33d}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+
+
+                        {{with .Armis}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+                        {{with .ViriBack}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+                        {{with .ComodoValkyrieVerdict}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .PhishLabs}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+                        {{with .K7AntiVirus}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .CINSArmy}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Quttera}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .OpenPhish}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+                        {{with .VXVault}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .WebSecurityGuard}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+                        {{with .Scantitan}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .AlienVault}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Sophos}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Phishtank}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .EonScope}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Cyan}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Spam404}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .SecureBrain}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .HopliteIndustries}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .CRDF}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Fortinet}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .AlphaMountainAI}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Lionic}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .VirusdieExternalSiteScan}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .GoogleSafebrowsing}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .SafeToOpen}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .ADMINUSLabs}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .CyberCrime}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .HeimdalSecurity}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .AutoShun}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Trustwave}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .AICCMONITORAPP}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .CyRadar}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .DrWeb}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Emsisoft}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Abusix}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+                        {{with .Webroot}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Avira}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Securolytics}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .AntiyAVL}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Acronis}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .QuickHeal}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .ESTsecurityThreatInside}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .DNS8}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+                        {{with .BenkowCC}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .EmergingThreats}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .ChongLuaDao}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+                        {{with .YandexSafebrowsing}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .MalwareDomainList}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Lumu}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Zvelo}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Kaspersky}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Segasec}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .SucuriSiteCheck}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .DesenmascaraME}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .URLhaus}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .PREBYTES}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .StopForumSpam}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Blueliv}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Netcraft}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .ZeroCERT}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .PhishingDatabase}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .MalwarePatrol}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .IPsum}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Spamhaus}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Malwared}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .BitDefender}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .GreenSnow}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .GData}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .StopBadware}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .SCUMWAREORG}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .MalwaresCOMURLChecker}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .NotMining}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .ForcepointThreatSeeker}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Certego}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .ESET}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Threatsourcing}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .MalSilo}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Nucleon}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .BADWAREINFO}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .ThreatHive}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .FraudScore}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .Tencent}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .BforeAiPreCrime}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                        {{with .BaiduInternational}}
+                            <tr>
+                                <td style="width:33%; text-align:center">
+                                    {{.EngineName}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Result}}
+                                </td>
+                                <td style="width:33%; text-align:center">
+                                    {{.Category}}
+                                </td>
+                            </tr>
+                        {{end}}
+
+                    </tbody>
+                {{end}}
+            </table>
+
+            <br>
+
+            <table class="cinereousTable">
+                <thead>
+                    <tr>
+                        <th style="text-align:center">Whois Lookup</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th style="text-align:left">{{.Whois}}</th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+            <table class="cinereousTable">
+                <thead>
+                    <tr>
+                        <th colspan="2" style="text-align:center">Basic Properties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:left">
+                            Network
+                        </td>
+                        <td style="text-align:left">
+                            {{.Network}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left">
+                            Autonomous System Number
+                        </td>
+                        <td style="text-align:left">
+                            {{.ASN}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left">
+                            Autonomous System Label
+                        </td>
+                        <td style="text-align:left">
+                            {{.AsOwner}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left">
+                            Regional Internet Registry
+                        </td>
+                        <td style="text-align:left">
+                            {{.RegionalInternetRegistry}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left">
+                            Country
+                        </td>
+                        <td style="text-align:left">
+                            {{.Country}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left">
+                            Continent
+                        </td>
+                        <td style="text-align:left">
+                            {{.Continent}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+            <table class="cinereousTable">
+                {{with .LastHttpsCertificate}}
+                    <thead>
+                        <tr>
+                            <th style="text-align:center" >Last HTTPS Certificate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th style="text-align:left">
+                                <p>Data:</p>
+                                <p>&nbsp;Version: {{.Version}}</p>
+                                <p>&nbsp;Serial Number: {{.SerialNumber}}</p>
+                                <p>&nbsp;Thumbprint: {{.Thumbprint}}</p>
+                                {{with .CertSignature}}
+                                    <p>Signature Algorithm: {{.SignatureAlgorithm}}</p>
+                                {{end}}
+                                {{with .Issuer}}
+                                    <p>&nbsp;Issuer:  C={{.C}} , L={{.CN}} , O={{.O}}</p>
+                                {{end}}
+                                {{with .Validity}}
+                                    <p>&nbsp;Validity:</p>
+                                    <p>&nbsp;&nbsp;NotBefore: {{.NotBefore}}</p>
+                                    <p>&nbsp;&nbsp;Not After: {{.NotAfter}}</p>
+                                {{end}}
+                                {{with .Subject}}
+                                    <p>&nbsp;Subject:  C={{.C}} , L={{.L}} , CN={{.CN}} , O={{.O}} , ST={{.ST}}</p>
+                                {{end}}
+                                <p>&nbsp;Subject Public Key Info:</p>
+                                {{with .PublicKey}}
+                                    <p>&nbsp;&nbsp;Public Key Algorithm: {{.Algorithm}}</p>
+                                    {{with .EC}}
+                                        <p>&nbsp;&nbsp;&nbsp;OID: {{.Oid}}</p>
+                                    {{end}}
+                                {{end}}
+                                {{with .Extensions}}
+                                    <p>&nbsp;X509v3 extensions:</p>
+                                    <p>&nbsp;&nbsp;X509v3 Authority Key Identifier: </p>
+                                    <p>&nbsp;&nbsp;&nbsp;{{with .AuthorityKeyIdentifier}}{{.KeyID}}{{end}}</p>
+
+                                    <p>&nbsp;&nbsp;X509v3 Subject Key Identifier: </p>
+                                    <p>&nbsp;&nbsp;&nbsp;{{.SubjectKeyIdentifier}}</p>
+
+                                    <p>&nbsp;&nbsp;X509v3 Key Usage: </p>
+                                    <p>&nbsp;&nbsp;&nbsp;{{range .KeyUsage}}{{.}}{{end}}</p>
+
+                                    <p>&nbsp;&nbsp;X509v3 Extended Key Usage: </p>
+                                    <p>&nbsp;&nbsp;&nbsp;{{range .ExtendedKeyUsage}}{{.}}{{end}}</p>
+
+                                    <p>&nbsp;&nbsp;X509v3 CRL Distribution Points: </p>
+                                    {{range .CrlDistributionPoints}}
+                                        <p>&nbsp;&nbsp;&nbsp;Full Name: </p>
+                                        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{.}}</p>
+                                    {{end}}
+
+                                    <p>&nbsp;&nbsp;X509v3 Certification Policies: </p>
+                                    <p>&nbsp;&nbsp;&nbsp;{{range .CertificatePolicies}}{{.}}{{end}}</p>
+
+                                    <p>&nbsp;&nbsp;Authority Information Access: </p>
+                                    {{with .CAInformationAccess}}
+                                        <p>&nbsp;&nbsp;&nbsp;CA Issuers - {{.CAIssuers}}</p>
+                                        <p>&nbsp;&nbsp;&nbsp;OCSP - {{.OCSP}}</p>
+                                    {{end}}
+
+                                    <p>&nbsp;&nbsp;X509v3 Basic Constraints: </p>
+                                    <p>&nbsp;&nbsp;&nbsp;CA:{{.CA}}</p>
+
+                                    <p>&nbsp;&nbsp;1.3.6.1.4.1.11129.2.4.2: </p>
+                                    <p>&nbsp;&nbsp;&nbsp;{{.Numbers}}</p>
+                                {{end}}
+                                <p>&nbsp;&nbsp;Signature Algorithm: {{.SignatureAlgorithm}}</p>
+                            </th>
+                        </tr>
+                    </tbody>
+                {{end}}
+            </table>
+        {{end}}
     {{end}}
-    {{.Links.Self}}
 {{end}}
 
 {{end}}
