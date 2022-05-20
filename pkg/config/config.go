@@ -218,3 +218,8 @@ type Subject struct {
 	O  string `json:"O"`
 	CN string `json:"CN"`
 }
+
+type Pattern struct {
+	PatternName string
+	PatterLogs  string
+}

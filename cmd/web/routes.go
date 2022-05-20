@@ -24,6 +24,8 @@ func (app *application) routes() http.Handler {
 	mux.Post("/ip-checker", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.ipChecker))
 	mux.Get("/ip-info", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.ipInfo))
 
+	mux.Get("/grok", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.grokInfo))
+
 	fileServer := http.FileServer(http.Dir("./ui/static/"))
 	mux.Get("/static/", http.StripPrefix("/static", fileServer))
 

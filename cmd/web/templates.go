@@ -14,7 +14,7 @@ type templateData struct {
 	Time            bool
 	IsAuthenticated bool
 	Config          *config.Config
-	//Data            []config.Data
+	Pattern         []*config.Pattern
 }
 
 func newTemplateCache(dir string) (map[string]*template.Template, error) {

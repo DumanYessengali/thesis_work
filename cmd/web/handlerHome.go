@@ -3,9 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/xuri/excelize/v2"
 	"io/ioutil"
+	"log"
 	"net"
 	"net/http"
+	"strconv"
 	"thesis_work/pkg/config"
 	"thesis_work/pkg/forms"
 )
@@ -66,25 +69,62 @@ func (app *application) ipInfo(w http.ResponseWriter, r *http.Request) {
 
 	body, _ := ioutil.ReadAll(res.Body)
 
-	//fmt.Println(res)
-
 	JSONobj := &config.Config{}
 	if err := json.Unmarshal(body, JSONobj); err != nil {
 		fmt.Printf("JSON unmarshal error: %v\n", err)
 		return
 	}
-	//fmt.Println(JSONobj.Links)
-	//fmt.Println(JSONobj.Data[0].ID)
-	//fmt.Println(JSONobj.Data[0].Type)
-	//fmt.Println(JSONobj.Data[0].Links.Self)
-	//fmt.Println(JSONobj.Data[0].Attributes.AsOwner)
-
 	//-------
 	flash := app.session.PopString(r, "flash")
 	app.render(w, r, "ip-info.page.tmpl", &templateData{
 		Flash:  flash,
 		Config: JSONobj,
-		//Data:   JSONobj.Data,
 	})
+}
 
+func (app *application) grokInfo(w http.ResponseWriter, r *http.Request) {
+	f, err := excelize.OpenFile("pattern.xlsx")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var excels []*config.Pattern
+	c1, err := f.GetCellValue("Лист1", "A1")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	c2, err := f.GetCellValue("Лист1", "B1")
+	if err != nil {
+		log.Fatal(err)
+	}
+	num := 2
+	for len(c1) != 0 || len(c2) != 0 {
+		a := "A" + strconv.Itoa(num)
+		b := "B" + strconv.Itoa(num)
+
+		c1, err = f.GetCellValue("Лист1", a)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		c2, err = f.GetCellValue("Лист1", b)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		excel := &config.Pattern{
+			PatternName: c1,
+			PatterLogs:  c2,
+		}
+		excels = append(excels, excel)
+		num++
+	}
+
+	flash := app.session.PopString(r, "flash")
+	app.render(w, r, "grok.page.tmpl", &templateData{
+		Flash:   flash,
+		Pattern: excels,
+	})
 }
